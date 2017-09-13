@@ -1,11 +1,270 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     
-    <entry>
-      <title><![CDATA[小猪的Git使用总结]]></title>
-      <url>/2017/09/13/%E5%B0%8F%E7%8C%AA%E7%9A%84Git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</url>
-      <content type="html"><![CDATA[<p><img src="http://static.zybuluo.com/coder-pig/8tuua13m0eqnrybzo9x4tai5/image_1bp083nbp1n7a9ad162a1v3s1lcr9.png" alt=""></p>
+
+    <title>小猪的Git使用总结 | 吾日三省吾身</title>
+    <meta name="author" content="CoderPig">
+    
+    <meta name="description" content="目录
+[TOC]
+
+概述：
+接触Git也些年头了，对于Git的使用也算是小有所成，想着便于自己日后回顾，也便于他人查阅学习，遂有此文，相信看完此文你的Git使用会更进一步，谢谢~
+在线版（排版更佳，不定期更新）：https://www.zybuluo.com/coder-pig/note/58132">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="小猪的Git使用总结"/>
+    <meta property="og:site_name" content="CoderPig的小世界"/>
+
+    
+    <meta property="og:image" content=""/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="CoderPig的小世界" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
+
+    <nav class="grey darken-3">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">CoderPig的小世界</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav grey darken-3" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row">
+                <div class="col s4 no-padding">
+                    <img class="avatar-image circle responsive-img" src="http://static.zybuluo.com/coder-pig/suijucwwfql29o0qq276yxfa/favicon.png" alt="User Avatar">
+                </div>
+                <div class="info col s8 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">CoderPig</p>
+                        <p class="desc">Android Develop</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav grey darken-3" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/博客搭建/">
+                    博客搭建 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/版本管理/">
+                    版本管理 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper grey darken-3">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/版本管理/">版本管理</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>小猪的Git使用总结</h1>
+    
+
+
+            </div>
+            <time class="blue-link-context" datetime="2017-09-13T04:23:21.000Z"><a href="/2017/09/13/小猪的Git使用总结/">2017-09-13</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/Git/" class="chip blue lighten-1">Git</a>
+        
+    </div>
+
+
+            <div class="toc blue-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#安装配置与文档"><span class="section table-of-contents-text">安装配置与文档</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-下载安装"><span class="section table-of-contents-text">1.下载安装</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-文档教程相关"><span class="section table-of-contents-text">2.文档教程相关</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#概念"><span class="section table-of-contents-text">概念</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-Git的四个组成部分"><span class="section table-of-contents-text">1.Git的四个组成部分</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-文件的几个状态"><span class="section table-of-contents-text">2.文件的几个状态</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-Git与SVN版本版本控制存储差异"><span class="section table-of-contents-text">3.Git与SVN版本版本控制存储差异</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-每次Commit时仓库中的数据结构"><span class="section table-of-contents-text">4.每次Commit时仓库中的数据结构</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#本地操作命令"><span class="section table-of-contents-text">本地操作命令</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-相关配置【git-config】"><span class="section table-of-contents-text">1.相关配置【git config】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-获取帮助【git-help】"><span class="section table-of-contents-text">2.获取帮助【git help】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-创建本地仓库【git-init】"><span class="section table-of-contents-text">3.创建本地仓库【git init】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-添加文件到暂存区-文件跟踪标记【git-add】"><span class="section table-of-contents-text">4.添加文件到暂存区/文件跟踪标记【git add】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-让Git不Tracked特定文件【-gitignore文件配置】"><span class="section table-of-contents-text">5.让Git不Tracked特定文件【.gitignore文件配置】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-将暂存区内容提交到本地仓库【git-commit】"><span class="section table-of-contents-text">6.将暂存区内容提交到本地仓库【git commit】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-查看工作区与缓存区的状态【git-status】"><span class="section table-of-contents-text">7.查看工作区与缓存区的状态【git status】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-差异对比-内容变化-【git-diff】"><span class="section table-of-contents-text">8.差异对比(内容变化)【git diff】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-查看历史提交记录【git-log】"><span class="section table-of-contents-text">9.查看历史提交记录【git log】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-查看某行代码是谁写的【git-blame】"><span class="section table-of-contents-text">10.查看某行代码是谁写的【git blame】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#11-设置Git命令别名【git-config-–global-alias】"><span class="section table-of-contents-text">11.设置Git命令别名【git config –global alias】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#12-为重要的commit打标签【git-tag】"><span class="section table-of-contents-text">12.为重要的commit打标签【git tag】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#15-Git命令自动补全【输命令的时候按两次tab键】"><span class="section table-of-contents-text">15.Git命令自动补全【输命令的时候按两次tab键】</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#文件回复-版本回退"><span class="section table-of-contents-text">文件回复/版本回退</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-文件恢复-未commit-【git-checkout】"><span class="section table-of-contents-text">1.文件恢复(未commit)【git checkout】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-文件恢复-已add未commit-【git-reset-HEAD】"><span class="section table-of-contents-text">2.文件恢复(已add未commit)【git reset HEAD】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-版本回退-已commit-【git-reset-–hard】"><span class="section table-of-contents-text">3.版本回退(已commit)【git reset –hard】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-查看输入指令记录【git-reflog】"><span class="section table-of-contents-text">4.查看输入指令记录【git reflog】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-撤销某次提交【git-revert】"><span class="section table-of-contents-text">5.撤销某次提交【git revert】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-查看某次提交修改内容【git-show】"><span class="section table-of-contents-text">6.查看某次提交修改内容【git show】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-查看某个分支的版本号【git-rev-parse】"><span class="section table-of-contents-text">7.查看某个分支的版本号【git rev-parse】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-找回丢失对象的最后一点希望【git-fsck】"><span class="section table-of-contents-text">8.找回丢失对象的最后一点希望【git fsck】</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#本地分支"><span class="section table-of-contents-text">本地分支</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-分支概念"><span class="section table-of-contents-text">1.分支概念</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-创建其他分支的原因"><span class="section table-of-contents-text">2.创建其他分支的原因</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-一个最简单实用的分支管理策略"><span class="section table-of-contents-text">3.一个最简单实用的分支管理策略</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-分支创建与切换【git-branch】"><span class="section table-of-contents-text">4.分支创建与切换【git branch】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-分支的合并【git-merge】-VS-【git-rebase】"><span class="section table-of-contents-text">5.分支的合并【git merge】 VS 【git rebase】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-解决合并冲突"><span class="section table-of-contents-text">6.解决合并冲突</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-删除分支"><span class="section table-of-contents-text">7.删除分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-恢复误删分支"><span class="section table-of-contents-text">8.恢复误删分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-切换分支时保存未commit的更改【git-stash】"><span class="section table-of-contents-text">9.切换分支时保存未commit的更改【git stash】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-分支重命名"><span class="section table-of-contents-text">10.分支重命名</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#远程仓库与远程分支"><span class="section table-of-contents-text">远程仓库与远程分支</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-远程仓库简述"><span class="section table-of-contents-text">1.远程仓库简述</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-推送本地仓库到远程仓库【git-push】"><span class="section table-of-contents-text">2.推送本地仓库到远程仓库【git push】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-克隆远程仓库【git-clone】"><span class="section table-of-contents-text">3.克隆远程仓库【git clone】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-同步远程仓库更新【git-fetch】VS-【git-pull】"><span class="section table-of-contents-text">4.同步远程仓库更新【git fetch】VS 【git pull】</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-推送本地分支到远程仓库"><span class="section table-of-contents-text">5.推送本地分支到远程仓库</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-查看远程分支"><span class="section table-of-contents-text">6.查看远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-拉取远程分支到本地仓库"><span class="section table-of-contents-text">7.拉取远程分支到本地仓库</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-删除远程分支"><span class="section table-of-contents-text">8.删除远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-重命名远程分支"><span class="section table-of-contents-text">9.重命名远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-为项目添加SSH-Key免去提交输入账号密码的麻烦"><span class="section table-of-contents-text">10.为项目添加SSH Key免去提交输入账号密码的麻烦</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#附1：Github客户端"><span class="section table-of-contents-text">附1：Github客户端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#附2：删除Git仓库"><span class="section table-of-contents-text">附2：删除Git仓库</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#附3：为开源项目贡献代码"><span class="section table-of-contents-text">附3：为开源项目贡献代码</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Git工作流"><span class="section table-of-contents-text">Git工作流</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-集中式工作流"><span class="section table-of-contents-text">1.集中式工作流</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-功能分支工作流"><span class="section table-of-contents-text">2.功能分支工作流</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-Gitflow工作流"><span class="section table-of-contents-text">3.Gitflow工作流</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-Forking工作流"><span class="section table-of-contents-text">4.Forking工作流</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-Pull-Request工作流"><span class="section table-of-contents-text">5.Pull Request工作流</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#查缺补漏"><span class="section table-of-contents-text">查缺补漏</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-巨好用的Git图形化工具SourceTree"><span class="section table-of-contents-text">1.巨好用的Git图形化工具SourceTree</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-把提交的commit从一个分支放到另一个分支【git-cherry-pick】"><span class="section table-of-contents-text">2.把提交的commit从一个分支放到另一个分支【git cherry-pick】</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry blue-link-context">
+                <p><img src="http://static.zybuluo.com/coder-pig/8tuua13m0eqnrybzo9x4tai5/image_1bp083nbp1n7a9ad162a1v3s1lcr9.png" alt=""></p>
 <hr>
 <p><strong>目录</strong></p>
 <p>[TOC]</p>
@@ -576,94 +835,337 @@
 <li>2017.5.3： 添加.gitignore注意事项</li>
 <li>2017.9.5： 排版与内容优化，勘误，新增查缺补漏</li>
 </ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 版本管理 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-        
-    </entry>
+
+                
+
+
+<p class="blue-link-context">
+    <a href="/2017/09/12/Hexo搭建个人博客相关/" rel="next" title="Hexo搭建个人博客相关">
+    下一篇：Hexo搭建个人博客相关
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large blue">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect green" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse yellow darken-1"  data-activates="main-menu" title="菜单"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer grey darken-3 darken-1">
     
-    <entry>
-      <title><![CDATA[Hexo搭建个人博客相关]]></title>
-      <url>/2017/09/12/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/</url>
-      <content type="html"><![CDATA[<h2 id="环境安装与配置"><a href="#环境安装与配置" class="headerlink" title="环境安装与配置"></a>环境安装与配置</h2><hr>
-<h3 id="1-安装Node-js与Git"><a href="#1-安装Node-js与Git" class="headerlink" title="1.安装Node.js与Git"></a>1.安装Node.js与Git</h3><p><strong>「Windows」</strong></p>
-<blockquote>
-<ul>
-<li>下载安装 <a href="https://nodejs.org/en/" target="_blank" rel="external"><strong>Node.js</strong></a>：用于创建hexo博客框架</li>
-<li>下载安装 <a href="https://git-scm.com/download" target="_blank" rel="external"><strong>Git客户端</strong></a>：用于提交hexo内容到Github</li>
-</ul>
-</blockquote>
-<p><strong>「Mac」</strong></p>
-<blockquote>
-<ul>
-<li>使用 <strong>brewhome</strong> 安装 <strong>Node.js</strong>：<strong>brew install node</strong></li>
-<li>安装 <strong>git</strong>：<strong>sudo brew install git</strong></li>
-</ul>
-</blockquote>
-<p><strong>配置SSH Key</strong>：这个是把博客发布到Github的时候要用到，很简单直接贴<br>命令，详细步骤可见：<a href="http://blog.csdn.net/coder_pig/article/details/54346867" target="_blank" rel="external">http://blog.csdn.net/coder_pig/article/details/54346867</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mkdir ~./ssh</div><div class="line">cd ~./ssh</div><div class="line">ssh-keygen -t rsa -C &quot;xxx@xxx.xxx&quot;</div><div class="line">cat id_rsa.pub  # 也可以直接打开文件拷贝</div></pre></td></tr></table></figure>
-<p>然后贴到自己Github的 <strong>Setting</strong> -&gt; <strong>SSH keys</strong> 即可。</p>
-<hr>
-<h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><p>前两步都安装成功的话，新建一个文件夹用来放博客相关的东西，<br>Windows右键 <strong>Git bash</strong> 打开命令行，Mac打开终端，cd到所<br>创建的文件目录下，键入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
-<p><strong>安装 Hexo</strong>，接着初始化建立网站的所需文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
-<p><strong>安装依赖包</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
-<p>接着就可以使用hexo相关的一些命令了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo g #hexo generate，用于生成静态文件</div><div class="line">hexo clean #清除生成的静态文件</div><div class="line">hexo s #hexo server，用于启动服务器，主要用来本地预览</div><div class="line">hexo d #hexo deploy，用于将本地文件发布到github上</div><div class="line">hexo n #hexo new，用于新建一篇文章</div><div class="line">hexo v #hexo version，查看Hexo的版本</div><div class="line">hexo h #hexo help，查看帮助</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="3-创建Github仓库并部署文件到仓库"><a href="#3-创建Github仓库并部署文件到仓库" class="headerlink" title="3.创建Github仓库并部署文件到仓库"></a>3.创建Github仓库并部署文件到仓库</h3><p>如无意外，使用上面的 <strong>hexo g</strong> 和 <strong>hexo s</strong> 后打开对应的<br>本地网址就可以，就能预览博客效果了</p>
-<p><img src="http://static.zybuluo.com/coder-pig/ew5ohm6648rrx7aq9wkhwr61/9AA3652A-D977-4BE7-8051-2CDE975D52D6.png" alt=""></p>
-<p>接着就要把我们的博客部署到Github上了，流程如下：</p>
-<ul>
-<li>在Github上创建一个：<strong>Github用户名.github.io</strong> 的仓库，比如：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">coder-pig.github.io</div></pre></td></tr></table></figure>
-<ul>
-<li>打开hexo目录下的：<strong>_config.yml</strong> 文件，滚到最后<strong>deploy</strong>结点处，添加：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    type: git</div><div class="line">    repo: git@github.com:coder-pig/coder-pig.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure>
-<ul>
-<li>如果hexo d的时候出现：<strong>ERROR Deployer not found: git</strong>，可键入：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<ul>
-<li>然后在执行hexo d,如无意外，此时打开coder-pig.github.io就可以看到自己的网站了。</li>
-</ul>
-<hr>
-<h2 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h2><p>关于Hexo的配置，大部分都是通用的，找到对应Hexo主题的网站或者Github<br>一般都是有介绍的，比如改标题啊，名字啊，之类的，这里就不再复述了。<br>Hexo的主题还是蛮多的，可以到这里选择对应的主题，按流程配置下即可：<br><strong>Hexo主题选择</strong>：<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a><br>比如笔者用的就是：<a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism" target="_blank" rel="external">https://github.com/raytaylorlin/hexo-theme-raytaylorism</a></p>
-<hr>
-<h2 id="MD文档头部模板"><a href="#MD文档头部模板" class="headerlink" title="MD文档头部模板"></a>MD文档头部模板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Hexo搭建个人博客相关</div><div class="line">categories: 博客搭建</div><div class="line">tags: Hexo</div><div class="line">date: 2016.11.28 13:22:21</div></pre></td></tr></table></figure>
-<hr>
-]]></content>
-      
-        <categories>
+    <div class="footer-container container">
+        <div class="row">
             
-            <category> 博客搭建 </category>
+            <div class="social-group col m4 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/3263534374" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/coder-pig" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
             
-        </categories>
-        
-        
-        <tags>
+
             
-            <tag> Hexo </tag>
+            <div class="col m8 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://blog.csdn.net/coder_pig" target="_blank">我的CSDN博客</a>
+                
+                    <a class="social-link" href="http://www.jianshu.com/u/c47a51d2278e" target="_blank">我的简书</a>
+                
+                    <a class="social-link" href="http://music.163.com/#/user/home?id=52469355" target="_blank">我的网易云音乐</a>
+                
+            </div>
             
-        </tags>
-        
-    </entry>
+        </div>
+    </div>
     
-  
-  
-</search>
+
+    <div class="footer-copyright blue-link-context">
+        <div class="container">
+            © 2016 example.com, All rights reserved.
+            <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('blue lighten-2');
+
+            
+            // 添加new标签
+            $('.menu-reading, .menu-about').append('<span class="new badge blue"></span>');
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=60401259" charset="UTF-8"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
