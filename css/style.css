@@ -862,6 +862,7 @@ a.article-title:hover {
 .article-entry dl {
   margin-top: 1.9em;
   margin-bottom: 1.9em;
+  list-style: none;
 }
 .article-entry img,
 .article-entry video {
